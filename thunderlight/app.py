@@ -110,4 +110,4 @@ async def _not_found(ctx: Ctx) -> None:
 async def _static_file(ctx: Ctx) -> None:
     ctx.res.code = 200
     async with await open_file(getcwd() + ctx.req.path, mode="rb") as file:
-        ctx.res.body = await file.read(64 * 1024)
+        ctx.res.body = await file.read()
